@@ -406,4 +406,5 @@ class CustomColors {
   static const Color deepBlue = Color(0xFF354052);
   static const Color tabIconColor = Color(0xFF44464B);
   static const Color tabIconHighlightColor = Color(0xFFFFF6FE);
+  static const Color lightPinkColor = Color(0xFFFFEFF0);
 }

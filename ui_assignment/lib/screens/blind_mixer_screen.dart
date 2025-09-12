@@ -50,15 +50,110 @@ class _BlindMixerScreenState extends State<BlindMixerScreen> {
               _BlindMixerAppbar(),
               30.verticalSpace,
               Image.asset(CustomPNGs.date, height: 240.w, width: 240.w),
-              Text("Upcoming Blind Date"),
-              Text("Let Mixer surprise you with a match."),
-              Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  CustomSVGs.calendar(color: CustomColors.purpleDark),
-                  Text("September 28 - 10 PM"),
-                ],
+              Divider(color: CustomColors.lightPinkColor),
+              26.verticalSpace,
+              Text(
+                "Upcoming Blind Date",
+                style: TextStyle(fontWeight: FontWeight.w800, fontSize: 22.sp),
               ),
+              6.verticalSpace,
+              Text(
+                "Let Mixer surprise you with a match.",
+                style: TextStyle(fontWeight: FontWeight.w400, fontSize: 16.sp),
+              ),
+              16.verticalSpace,
+              Container(
+                decoration: BoxDecoration(
+                  border: Border.all(color: CustomColors.lightPinkColor),
+                  borderRadius: BorderRadius.circular(200.r),
+                ),
+                padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
+                child: Row(
+                  spacing: 5.w,
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    CustomSVGs.calendar(color: CustomColors.purpleDark),
+                    Text(
+                      "September 28 - 10 PM",
+                      style: TextStyle(fontSize: 14.sp),
+                    ),
+                  ],
+                ),
+              ),
+              26.verticalSpace,
+              Divider(color: CustomColors.lightPinkColor),
+              Spacer(),
+              ValueListenableBuilder(
+                valueListenable: isFormFilled,
+                builder: (context, isFormFilledValue, child) {
+                  if (isFormFilledValue) {
+                    return TextButton(
+                      onPressed: () {},
+                      child: Row(
+                        children: [
+                          Icon(Icons.check, color: CustomColors.purpleDark),
+                          Text(
+                            "Applied for Blind Mixer",
+                            style: TextStyle(color: CustomColors.purpleDark),
+                          ),
+                        ],
+                      ),
+                    );
+                  }
+                  return Column(
+                    children: [
+                      Row(
+                        spacing: 12.w,
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Text(
+                            "Sign Up",
+                            style: TextStyle(color: CustomColors.purpleDark),
+                          ),
+                          Icon(
+                            Icons.circle,
+                            size: 8,
+                            color: CustomColors.purpleDark,
+                          ),
+                          Text(
+                            "Smart Match",
+                            style: TextStyle(color: CustomColors.purpleDark),
+                          ),
+                          Icon(
+                            Icons.circle,
+                            size: 8,
+                            color: CustomColors.purpleDark,
+                          ),
+                          Text(
+                            "Blind Date",
+                            style: TextStyle(color: CustomColors.purpleDark),
+                          ),
+                        ],
+                      ),
+                      24.verticalSpace,
+                      TextButton(
+                        onPressed: () {},
+                        style: TextButton.styleFrom(
+                          backgroundColor: CustomColors.purpleDark,
+                          minimumSize: Size(double.infinity, 50.h),
+                        ),
+                        child: Row(
+                          spacing: 6.w,
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            CustomSVGs.form(color: Colors.white),
+                            Text(
+                              "Fill out the Form",
+                              style: TextStyle(color: Colors.white),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  );
+                },
+              ),
+              35.verticalSpace,
             ],
           ),
         ),
