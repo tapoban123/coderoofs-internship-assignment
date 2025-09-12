@@ -118,9 +118,6 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                     fontWeight: FontWeight.w700,
                   ),
                 ),
-                // Column(
-                //   children:  List.generate(30, (index) => Text("hello"),),
-                // )
                 ListView.builder(
                   physics: NeverScrollableScrollPhysics(),
                   shrinkWrap: true,
@@ -133,13 +130,13 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                         ListTile(
                           title: Text(option.name),
                           leading: option.logo,
-
                           trailing: CustomSVGs.arrow(
                             color: CustomColors.gray600,
                           ),
                           shape: Border(
                             bottom: BorderSide(color: CustomColors.gray200),
                           ),
+                          onTap: option.onTap,
                         ),
                       ],
                     );
@@ -168,7 +165,7 @@ class _PerfectMatchCard extends StatelessWidget {
       decoration: BoxDecoration(
         color: CustomColors.purpleLight,
         borderRadius: BorderRadius.circular(16.r),
-        border: Border.all(color: CustomColors.purpleMedium),
+        border: Border.all(color: CustomColors.purpleMedium, width: 1),
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -215,20 +212,23 @@ class _EditProfileAppbar extends StatelessWidget {
     return SizedBox(
       height: 50.h,
       child: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           GestureDetector(
             onTap: () {
               Navigator.of(context).pop();
             },
-
             child: Icon(CupertinoIcons.back),
           ),
           Text(
             "Edit Profile",
             style: TextStyle(fontWeight: FontWeight.w600, fontSize: 16.sp),
           ),
-          CustomSVGs.eye_2(color: CustomColors.deepBlue),
+          CustomSVGs.eye_2(
+            color: CustomColors.deepBlue,
+            width: 20.w,
+          ),
         ],
       ),
     );
