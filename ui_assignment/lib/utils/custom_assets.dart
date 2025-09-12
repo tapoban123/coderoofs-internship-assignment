@@ -397,7 +397,9 @@ class CustomColors {
   static const Color purpleDark = Color(0xFF5E1053);
   static const Color purpleLight = Color(0xFFFFF8FB);
   static const Color purpleMedium = Color(0xFFECD3E8);
+  static const Color gray200 = Color(0xFFF0F0F0);
   static const Color gray700 = Color(0xFF44464B);
   static const Color gray600 = Color(0xFF6E6F73);
   static const Color gray800 = Color(0xFF22242B);
+  static const Color deepBlue = Color(0xFF354052);
 }
