@@ -1,0 +1,61 @@
+import 'package:flutter/material.dart';
+import 'package:ui_assignment/screens/blind_mixer_screen.dart';
+import 'package:ui_assignment/screens/edit_profile_screen.dart';
+
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          spacing: 12,
+          children: [
+            _HomeCustomButton(
+              text: "Blind Mixer Screen",
+              color: Colors.purpleAccent,
+              screen: BlindMixerScreen(),
+            ),
+            _HomeCustomButton(
+              text: "Edit Profile Screen",
+              color: Colors.orange,
+              screen: EditProfileScreen(),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class _HomeCustomButton extends StatelessWidget {
+  final String text;
+  final Color color;
+  final Widget screen;
+
+  const _HomeCustomButton({
+    super.key,
+    required this.text,
+    required this.color,
+    required this.screen,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      onPressed: () {
+        Navigator.of(
+          context,
+        ).push(MaterialPageRoute(builder: (context) => screen));
+      },
+      style: ElevatedButton.styleFrom(
+        backgroundColor: color,
+        minimumSize: Size(double.infinity, 60),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+      ),
+      child: Text(text, style: TextStyle(fontSize: 16, color: Colors.white)),
+    );
+  }
+}
