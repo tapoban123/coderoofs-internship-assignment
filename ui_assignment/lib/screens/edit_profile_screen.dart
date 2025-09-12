@@ -32,7 +32,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 _EditProfileAppbar(),
-                30.verticalSpace,
+                20.verticalSpace,
                 Stack(
                   children: [
                     GridView(

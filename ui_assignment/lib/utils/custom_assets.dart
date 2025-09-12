@@ -389,8 +389,17 @@ class CustomSVGs {
 class CustomFontFamily {
   CustomFontFamily._();
 
-  static const String MANROPE = "Manrope";
-  static const String ONEST = "Onest";
+  static const String MANROPE_BOLD = "Manrope-Bold";
+  static const String MANROPE_SEMIBOLD = "Manrope-SemiBold";
+  static const String MANROPE_REGULAR = "Manrope-Regular";
+  static const String MANROPE_MEDIUM = "Manrope-Medium";
+  static const String MANROPE_EXTRABOLD = "Manrope-ExtraBold";
+
+  static const String ONEST_BOLD = "Onest-Bold";
+  static const String ONEST_EXTRABOLD = "Onest-ExtraBold";
+  static const String ONEST_MEDIUM = "Onest-Medium";
+  static const String ONEST_REGULAR = "Onest-Regular";
+  static const String ONEST_SEMIBOLD = "Onest-SemiBold";
 }
 
 class CustomColors {

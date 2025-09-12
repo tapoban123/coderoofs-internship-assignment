@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
           scaffoldBackgroundColor: Colors.white,
           textTheme: Theme.of(
             context,
-          ).textTheme.apply(fontFamily: CustomFontFamily.MANROPE),
+          ).textTheme.apply(fontFamily: CustomFontFamily.MANROPE_REGULAR),
         ),
         title: "UI Assignment",
         home: HomeScreen(),

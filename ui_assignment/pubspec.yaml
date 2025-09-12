@@ -76,12 +76,37 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-   - family: Manrope
+   - family: Manrope-Bold
      fonts:
-       - asset: assets/fonts/Manrope-VariableFont_wght.ttf
-   - family: Onest
+       - asset: assets/fonts/Manrope/Manrope-Bold.ttf
+   - family: Manrope-ExtraBold
      fonts:
-       - asset: assets/fonts/Onest-VariableFont_wght.ttf
+       - asset: assets/fonts/Manrope/Manrope-ExtraBold.ttf
+   - family: Manrope-Medium
+     fonts:
+       - asset: assets/fonts/Manrope/Manrope-Medium.ttf
+   - family: Manrope-Regular
+     fonts:
+       - asset: assets/fonts/Manrope/Manrope-Regular.ttf
+   - family: Manrope-SemiBold
+     fonts:
+       - asset: assets/fonts/Manrope/Manrope-SemiBold.ttf
+
+   - family: Onest-Bold
+     fonts:
+       - asset: assets/fonts/Onest/Onest-Bold.ttf
+   - family: Onest-ExtraBold
+     fonts:
+       - asset: assets/fonts/Onest/Onest-ExtraBold.ttf
+   - family: Onest-Medium
+     fonts:
+       - asset: assets/fonts/Onest/Onest-Medium.ttf
+   - family: Onest-Regular
+     fonts:
+       - asset: assets/fonts/Onest/Onest-Regular.ttf
+   - family: Onest-SemiBold
+     fonts:
+       - asset: assets/fonts/Onest/Onest-SemiBold.ttf
 #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro

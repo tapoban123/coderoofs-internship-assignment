@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:ui_assignment/utils/custom_assets.dart';
 
 final ValueNotifier<int> _selectedTab = ValueNotifier(0);
@@ -17,11 +16,27 @@ class NavControllerScreen extends StatelessWidget {
         builder: (context, selectedTabValue, child) => IndexedStack(
           index: selectedTabValue,
           children: [
-            Scaffold(body: Center(child: Text("One"))),
-            Scaffold(body: Center(child: Text("Two"))),
-            Scaffold(body: Center(child: Text("Three"))),
+            Scaffold(
+              body: Center(
+                child: Text("One", style: TextStyle(fontSize: 30.sp)),
+              ),
+            ),
+            Scaffold(
+              body: Center(
+                child: Text("Two", style: TextStyle(fontSize: 30.sp)),
+              ),
+            ),
+            Scaffold(
+              body: Center(
+                child: Text("Three", style: TextStyle(fontSize: 30.sp)),
+              ),
+            ),
             BlindMixerScreen(),
-            Scaffold(body: Center(child: Text("Five"))),
+            Scaffold(
+              body: Center(
+                child: Text("Five", style: TextStyle(fontSize: 30.sp)),
+              ),
+            ),
           ],
         ),
       ),
@@ -88,8 +103,22 @@ class _BlindMixerScreenState extends State<BlindMixerScreen> {
                 builder: (context, isFormFilledValue, child) {
                   if (isFormFilledValue) {
                     return TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        isFormFilled.value = !isFormFilled.value;
+                      },
+                      style: TextButton.styleFrom(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(40.r),
+                          side: BorderSide(
+                            color: CustomColors.purpleMedium,
+                            width: 1,
+                          ),
+                        ),
+                        minimumSize: Size(double.infinity, 50.h),
+                      ),
                       child: Row(
+                        spacing: 6.w,
+                        mainAxisSize: MainAxisSize.min,
                         children: [
                           Icon(Icons.check, color: CustomColors.purpleDark),
                           Text(
@@ -132,8 +161,13 @@ class _BlindMixerScreenState extends State<BlindMixerScreen> {
                       ),
                       24.verticalSpace,
                       TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          isFormFilled.value = !isFormFilled.value;
+                        },
                         style: TextButton.styleFrom(
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(40.r),
+                          ),
                           backgroundColor: CustomColors.purpleDark,
                           minimumSize: Size(double.infinity, 50.h),
                         ),
@@ -217,18 +251,18 @@ class _CustomBottomNavBarState extends State<_CustomBottomNavBar> {
           BoxShadow(color: Colors.black12, blurRadius: 30, spreadRadius: 0.1),
         ],
       ),
-      child: ValueListenableBuilder(
-        valueListenable: _selectedTab,
-        builder: (context, selectedTabValue, child) => SafeArea(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: List.generate(
-              tabIcons.length,
-              (index) => CircleAvatar(
+      child: SafeArea(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: List.generate(
+            tabIcons.length,
+            (index) => ValueListenableBuilder(
+              valueListenable: _selectedTab,
+              builder: (context, selectedTabValue, child) => CircleAvatar(
                 radius: 24,
                 backgroundColor: index == selectedTabValue
                     ? CustomColors.tabIconHighlightColor
-                    : Colors.transparent,
+                    : Colors.white,
                 child: GestureDetector(
                   onTap: () {
                     _selectedTab.value = index;
