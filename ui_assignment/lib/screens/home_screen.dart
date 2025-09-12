@@ -50,16 +50,38 @@ class _HomeCustomButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: () {
-        Navigator.of(
-          context,
-        ).push(MaterialPageRoute(builder: (context) => screen));
+        Navigator.of(context).push(
+          PageRouteBuilder(
+            pageBuilder: (context, animation, secondaryAnimation) => screen,
+            transitionsBuilder:
+                (context, animation, secondaryAnimation, child) {
+                  final tween = Tween(begin: Offset(1, 0), end: Offset.zero)
+                      .animate(
+                        CurvedAnimation(
+                          parent: animation,
+                          curve: Curves.fastOutSlowIn,
+                        ),
+                      );
+
+                  return SlideTransition(position: tween, child: child);
+                },
+            transitionDuration: Duration(milliseconds: 500),
+          ),
+        );
       },
       style: ElevatedButton.styleFrom(
         backgroundColor: color,
         minimumSize: Size(double.infinity, 60),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       ),
-      child: Text(text, style: TextStyle(fontSize: 16, color: Colors.white, fontFamily: CustomFontFamily.ONEST_MEDIUM)),
+      child: Text(
+        text,
+        style: TextStyle(
+          fontSize: 16,
+          color: Colors.white,
+          fontFamily: CustomFontFamily.ONEST_MEDIUM,
+        ),
+      ),
     );
   }
 }
