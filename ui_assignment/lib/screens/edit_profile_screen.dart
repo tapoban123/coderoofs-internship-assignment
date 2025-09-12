@@ -104,6 +104,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                             height: 1.6.h,
                             fontWeight: FontWeight.w500,
                             color: CustomColors.purpleDark,
+                            fontFamily: CustomFontFamily.INTER_MEDIUM,
                           ),
                         ),
                       ),
@@ -116,6 +117,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                   style: TextStyle(
                     fontSize: 18.sp,
                     fontWeight: FontWeight.w700,
+                    fontFamily: CustomFontFamily.MANROPE_BOLD,
                   ),
                 ),
                 ListView.builder(
@@ -128,7 +130,15 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         ListTile(
-                          title: Text(option.name),
+                          title: Text(
+                            option.name,
+                            style: TextStyle(
+                              fontFamily: CustomFontFamily.MANROPE_MEDIUM,
+                              fontWeight: FontWeight.w500,
+                              fontSize: 16.sp,
+                              color: CustomColors.gray800,
+                            ),
+                          ),
                           leading: option.logo,
                           trailing: CustomSVGs.arrow(
                             color: CustomColors.gray600,
@@ -172,7 +182,12 @@ class _PerfectMatchCard extends StatelessWidget {
         children: [
           Text(
             "Discover your Perfect Match",
-            style: TextStyle(fontSize: 18.sp, fontWeight: FontWeight.w700),
+            style: TextStyle(
+              fontSize: 18.sp,
+              fontWeight: FontWeight.w700,
+              fontFamily: CustomFontFamily.MANROPE_BOLD,
+              color: CustomColors.gray800,
+            ),
           ),
           16.verticalSpace,
           SizedBox(
@@ -195,7 +210,12 @@ class _PerfectMatchCard extends StatelessWidget {
             ),
             child: Text(
               "Take the quiz again",
-              style: TextStyle(color: Colors.white),
+              style: TextStyle(
+                color: Colors.white,
+                fontFamily: CustomFontFamily.MANROPE_SEMIBOLD,
+                fontWeight: FontWeight.w600,
+                fontSize: 16.sp,
+              ),
             ),
           ),
         ],
@@ -223,12 +243,13 @@ class _EditProfileAppbar extends StatelessWidget {
           ),
           Text(
             "Edit Profile",
-            style: TextStyle(fontWeight: FontWeight.w600, fontSize: 16.sp),
+            style: TextStyle(
+              fontWeight: FontWeight.w600,
+              fontSize: 16.sp,
+              fontFamily: CustomFontFamily.MANROPE_SEMIBOLD,
+            ),
           ),
-          CustomSVGs.eye_2(
-            color: CustomColors.deepBlue,
-            width: 20.w,
-          ),
+          CustomSVGs.eye_2(color: CustomColors.deepBlue, width: 20.w),
         ],
       ),
     );

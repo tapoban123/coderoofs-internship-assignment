@@ -69,12 +69,21 @@ class _BlindMixerScreenState extends State<BlindMixerScreen> {
               26.verticalSpace,
               Text(
                 "Upcoming Blind Date",
-                style: TextStyle(fontWeight: FontWeight.w800, fontSize: 22.sp),
+                style: TextStyle(
+                  fontWeight: FontWeight.w800,
+                  fontSize: 22.sp,
+                  fontFamily: CustomFontFamily.MANROPE_EXTRABOLD,
+                ),
               ),
               6.verticalSpace,
               Text(
                 "Let Mixer surprise you with a match.",
-                style: TextStyle(fontWeight: FontWeight.w400, fontSize: 16.sp),
+                style: TextStyle(
+                  fontWeight: FontWeight.w400,
+                  fontSize: 16.sp,
+                  color: CustomColors.gray600,
+                  fontFamily: CustomFontFamily.MANROPE_REGULAR,
+                ),
               ),
               16.verticalSpace,
               Container(
@@ -84,13 +93,21 @@ class _BlindMixerScreenState extends State<BlindMixerScreen> {
                 ),
                 padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
                 child: Row(
-                  spacing: 5.w,
+                  spacing: 6.w,
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    CustomSVGs.calendar(color: CustomColors.purpleDark),
+                    CustomSVGs.calendar(
+                      color: CustomColors.purpleDark,
+                      width: 15.w,
+                    ),
                     Text(
                       "September 28 - 10 PM",
-                      style: TextStyle(fontSize: 14.sp),
+                      style: TextStyle(
+                        fontSize: 14.sp,
+                        fontFamily: CustomFontFamily.MANROPE_MEDIUM,
+                        fontWeight: FontWeight.w500,
+                        color: CustomColors.gray700,
+                      ),
                     ),
                   ],
                 ),
@@ -114,49 +131,57 @@ class _BlindMixerScreenState extends State<BlindMixerScreen> {
                             width: 1,
                           ),
                         ),
+                        backgroundColor: Colors.white,
                         minimumSize: Size(double.infinity, 50.h),
                       ),
                       child: Row(
                         spacing: 6.w,
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          Icon(Icons.check, color: CustomColors.purpleDark),
+                          Icon(
+                            Icons.check,
+                            color: CustomColors.purpleDark,
+                            size: 20.w,
+                          ),
                           Text(
                             "Applied for Blind Mixer",
-                            style: TextStyle(color: CustomColors.purpleDark),
+                            style: TextStyle(
+                              color: CustomColors.purpleDark,
+                              fontWeight: FontWeight.w600,
+                              fontFamily: CustomFontFamily.MANROPE_SEMIBOLD,
+                              fontSize: 16.sp,
+                            ),
                           ),
                         ],
                       ),
                     );
                   }
+
+                  final TextStyle style = TextStyle(
+                    color: CustomColors.purpleDark,
+                    fontSize: 15.sp,
+                    fontFamily: CustomFontFamily.MANROPE_MEDIUM,
+                    fontWeight: FontWeight.w500,
+                  );
                   return Column(
                     children: [
                       Row(
                         spacing: 12.w,
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          Text(
-                            "Sign Up",
-                            style: TextStyle(color: CustomColors.purpleDark),
-                          ),
+                          Text("Sign Up", style: style),
                           Icon(
                             Icons.circle,
                             size: 8,
                             color: CustomColors.purpleDark,
                           ),
-                          Text(
-                            "Smart Match",
-                            style: TextStyle(color: CustomColors.purpleDark),
-                          ),
+                          Text("Smart Match", style: style),
                           Icon(
                             Icons.circle,
                             size: 8,
                             color: CustomColors.purpleDark,
                           ),
-                          Text(
-                            "Blind Date",
-                            style: TextStyle(color: CustomColors.purpleDark),
-                          ),
+                          Text("Blind Date", style: style),
                         ],
                       ),
                       24.verticalSpace,
@@ -175,10 +200,15 @@ class _BlindMixerScreenState extends State<BlindMixerScreen> {
                           spacing: 6.w,
                           mainAxisSize: MainAxisSize.min,
                           children: [
-                            CustomSVGs.form(color: Colors.white),
+                            CustomSVGs.form(color: Colors.white, width: 14.w),
                             Text(
                               "Fill out the Form",
-                              style: TextStyle(color: Colors.white),
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w600,
+                                fontFamily: CustomFontFamily.MANROPE_SEMIBOLD,
+                                fontSize: 16.sp,
+                              ),
                             ),
                           ],
                         ),
@@ -208,7 +238,11 @@ class _BlindMixerAppbar extends StatelessWidget {
         children: [
           Text(
             "Blind Mixer",
-            style: TextStyle(fontSize: 24.sp, fontWeight: FontWeight.w700),
+            style: TextStyle(
+              fontSize: 24.sp,
+              fontFamily: CustomFontFamily.ONEST_BOLD,
+              fontWeight: FontWeight.w700,
+            ),
           ),
           Row(
             mainAxisSize: MainAxisSize.min,
@@ -232,12 +266,12 @@ class _CustomBottomNavBar extends StatefulWidget {
 }
 
 class _CustomBottomNavBarState extends State<_CustomBottomNavBar> {
-  final List<Widget> tabIcons = [
-    CustomSVGs.tab1(color: CustomColors.tabIconColor),
-    Image.asset(CustomPNGs.tab2),
-    CustomSVGs.tab3(color: CustomColors.tabIconColor),
-    CustomSVGs.tab4(color: CustomColors.tabIconColor),
-    CustomSVGs.profile(color: CustomColors.tabIconColor),
+  List<Widget> tabIcons(Color color) => [
+    CustomSVGs.tab1(color: color),
+    Image.asset(CustomPNGs.tab2, color: color),
+    CustomSVGs.tab3(color: color),
+    CustomSVGs.tab4(color: color),
+    CustomSVGs.profile(color: color),
   ];
 
   @override
@@ -255,7 +289,7 @@ class _CustomBottomNavBarState extends State<_CustomBottomNavBar> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: List.generate(
-            tabIcons.length,
+            tabIcons(CustomColors.tabIconColor).length,
             (index) => ValueListenableBuilder(
               valueListenable: _selectedTab,
               builder: (context, selectedTabValue, child) => CircleAvatar(
@@ -267,7 +301,11 @@ class _CustomBottomNavBarState extends State<_CustomBottomNavBar> {
                   onTap: () {
                     _selectedTab.value = index;
                   },
-                  child: tabIcons[index],
+                  child: tabIcons(
+                    index == selectedTabValue
+                        ? CustomColors.purpleDark
+                        : CustomColors.tabIconColor,
+                  )[index],
                 ),
               ),
             ),

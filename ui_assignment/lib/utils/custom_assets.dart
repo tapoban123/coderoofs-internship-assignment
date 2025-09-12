@@ -400,6 +400,8 @@ class CustomFontFamily {
   static const String ONEST_MEDIUM = "Onest-Medium";
   static const String ONEST_REGULAR = "Onest-Regular";
   static const String ONEST_SEMIBOLD = "Onest-SemiBold";
+
+  static const String INTER_MEDIUM = "Inter-Medium";
 }
 
 class CustomColors {

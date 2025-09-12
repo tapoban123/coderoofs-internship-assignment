@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ui_assignment/screens/blind_mixer_screen.dart';
 import 'package:ui_assignment/screens/edit_profile_screen.dart';
+import 'package:ui_assignment/utils/custom_assets.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -58,7 +59,7 @@ class _HomeCustomButton extends StatelessWidget {
         minimumSize: Size(double.infinity, 60),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       ),
-      child: Text(text, style: TextStyle(fontSize: 16, color: Colors.white)),
+      child: Text(text, style: TextStyle(fontSize: 16, color: Colors.white, fontFamily: CustomFontFamily.ONEST_MEDIUM)),
     );
   }
 }
