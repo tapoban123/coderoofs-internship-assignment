@@ -9,21 +9,24 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          spacing: 12,
-          children: [
-            _HomeCustomButton(
-              text: "Blind Mixer Screen",
-              color: Colors.purpleAccent,
-              screen: BlindMixerScreen(),
-            ),
-            _HomeCustomButton(
-              text: "Edit Profile Screen",
-              color: Colors.orange,
-              screen: EditProfileScreen(),
-            ),
-          ],
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 12.0),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            spacing: 12,
+            children: [
+              _HomeCustomButton(
+                text: "Blind Mixer Screen",
+                color: Colors.purpleAccent,
+                screen: BlindMixerScreen(),
+              ),
+              _HomeCustomButton(
+                text: "Edit Profile Screen",
+                color: Colors.orange,
+                screen: EditProfileScreen(),
+              ),
+            ],
+          ),
         ),
       ),
     );
