@@ -18,7 +18,7 @@ class HomeScreen extends StatelessWidget {
               _HomeCustomButton(
                 text: "Blind Mixer Screen",
                 color: Colors.purpleAccent,
-                screen: BlindMixerScreen(),
+                screen: NavControllerScreen(),
               ),
               _HomeCustomButton(
                 text: "Edit Profile Screen",

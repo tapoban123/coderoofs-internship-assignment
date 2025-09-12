@@ -5,6 +5,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 class CustomPNGs {
   CustomPNGs._();
 
+  static const String tab2 = "assets/images/tab2.png";
   static const String avatar = "assets/images/Avatar.png";
   static const String avatar_2 = "assets/images/Avatar_2.png";
   static const String avatar_3 = "assets/images/Avatar_3.png";
@@ -14,6 +15,7 @@ class CustomPNGs {
   static const String man2 = "assets/images/man2.jpg";
   static const String man5 = "assets/images/man5.jpg";
   static const String man6 = "assets/images/man6.jpg";
+  static const String date = "assets/images/date.png";
 }
 
 class CustomSVGs {
@@ -65,9 +67,9 @@ class CustomSVGs {
   }) {
     return SvgPicture.asset(
       "assets/images/date.svg",
-      colorFilter: ColorFilter.mode(color, BlendMode.srcIn),
-      height: height,
-      width: width,
+      // colorFilter: ColorFilter.mode(color, BlendMode.srcIn),
+      height: 240,
+      width: 240,
     );
   }
 
@@ -402,4 +404,6 @@ class CustomColors {
   static const Color gray600 = Color(0xFF6E6F73);
   static const Color gray800 = Color(0xFF22242B);
   static const Color deepBlue = Color(0xFF354052);
+  static const Color tabIconColor = Color(0xFF44464B);
+  static const Color tabIconHighlightColor = Color(0xFFFFF6FE);
 }
